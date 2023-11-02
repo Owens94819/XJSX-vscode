@@ -32,7 +32,7 @@
         "source.js": "javascript",
         "source.ts": "typescript",
         "source.json": "json",
-        "source.tsx": "typescriptreact"
+        "source.tsx": "javascript"
       },
       "unbalancedBracketScopes": [
         "keyword.operator.relational",
@@ -51,7 +51,7 @@
 				],
 				"embeddedLanguages": {
 					"meta.embedded.block.xjsx": "xjsx",
-					"meta.embedded.block.xjsx.frontmatter": "typescriptreact"
+					"meta.embedded.block.xjsx.frontmatter": "javascript"
 				}
 			}]
   }

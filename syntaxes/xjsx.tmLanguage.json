@@ -121,7 +121,7 @@
 			"include": "#tags"
 		  },
 		  {
-			"include": "#interpolation"
+			"/**/include": "#interpolation"
 		  },
 		  {
 			"begin": "(?<=>|})",
@@ -149,8 +149,8 @@
 	  "interpolation": {
 		"patterns": [
 		  {
-			"begin": "<\\?[^\\:]+",
-			"end": "\\?>",
+			"begin": "\\{",
+			"end": "\\}",
 			"beginCaptures": {
 			  "0": {
 				"name": "punctuation.section.embedded.begin.xjsx"
@@ -352,12 +352,12 @@
 		]
 	  },
 	  "attributes-interpolated": {
-		"begin": "(?<!:|=)\\s*({)",
+		"begin": "(?<!:|=)\\s*(\\{)",
 		"end": "(\\})",
 		"contentName": "meta.embedded.expression.xjsx source.tsx",
 		"patterns": [
 		  {
-			"include": "source.tsx"
+			 "include": "source.tsx"
 		  }
 		]
 	  },
@@ -395,7 +395,7 @@
 	  "attributes-value": {
 		"patterns": [
 		  {
-			"include": "#interpolation"
+			"/**/include": "#interpolation"
 		  },
 		  {
 			"match": "([^\\s\"'=<>`/]|/(?!>))+",
