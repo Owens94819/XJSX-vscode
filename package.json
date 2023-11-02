@@ -1,0 +1,58 @@
+{
+  "name": "my-xjsx",
+  "displayName": "my-xjsx",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "xjsx",
+      "aliases": ["xjsx", "xjsx"],
+      "extensions": [".xjsx"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [
+    {
+      "language": "xjsx",
+      "scopeName": "source.xjsx",
+      "path": "./syntaxes/xjsx.tmLanguage.json",
+      "embeddedLanguages": {
+        "text.html": "html",
+        "text.html.markdown": "markdown",
+        "source.css": "css",
+        "source.css.less": "less",
+        "source.css.scss": "scss",
+        "source.sass": "sass",
+        "source.stylus": "stylus",
+        "source.js": "javascript",
+        "source.ts": "typescript",
+        "source.json": "json",
+        "source.tsx": "typescriptreact"
+      },
+      "unbalancedBracketScopes": [
+        "keyword.operator.relational",
+        "storage.type.function.arrow",
+        "keyword.operator.bitwise.shift",
+        "meta.brace.angle",
+        "punctuation.definition.tag"
+      ]
+    },
+    {
+				"scopeName": "text.html.markdown.xjsx",
+				"path": "./syntaxes/markdown.xjsx.tmLanguage.json",
+				"injectTo": [
+					"text.html.markdown",
+					"source.xjsx"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.xjsx": "xjsx",
+					"meta.embedded.block.xjsx.frontmatter": "typescriptreact"
+				}
+			}]
+  }
+}

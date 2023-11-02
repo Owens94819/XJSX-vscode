@@ -1,0 +1,47 @@
+{
+  "scopeName": "source.xjsx",
+  "patterns": [
+    {
+      "begin": "<\\?xml",
+      "end": "\\?>",
+      "contentName": "meta.xml-declaration",
+      "captures": {
+        "0": { "name": "punctuation.definition.tag.xml" },
+        "1": { "name": "keyword.declaration.xml" }
+      }
+    },
+    {
+      "begin": "<[^/<>]+",
+      "end": ">",
+      "name": "entity.name.tag.xml",
+      "patterns": [
+        {
+          "include": "#tag-stuff"
+        }
+      ]
+    },
+    {
+      "id": "tag-stuff",
+      "begin": "\\s+",
+      "end": "(/>)|(>)",
+      "name": "entity.other.attribute-name.xml",
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "include": "#tag-stuff"
+    }
+  ],
+  "repository": {
+    "tag-stuff": {
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    }
+  }
+}
