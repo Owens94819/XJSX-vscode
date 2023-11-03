@@ -1,16 +1,16 @@
 {
     "comments": {
-      "blockComment": ["<!--", "-->"]
+      "blockComment": ["<!--[^\\?]", "-->"]
     },
     "brackets": [
         ["<?", "?>"],
-      ["<!--", "-->"],
-      ["<", ">"]
+        ["<!--?", "?-->"],
+        ["<", ">"],
     ],
     "autoClosingPairs": [
-      { "open": "{", "close": "}" }
+      { "open": "<?", "close": "?>" }
     ],
-    "autoCloseBefore": ";:.,=}])>` \n\t",
+    "autoCloseBefore": ">",
     "surroundingPairs": [
       { "open": "<?", "close": "?>" },
       { "open": "<", "close": ">" }

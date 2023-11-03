@@ -1,0 +1,110 @@
+{
+	"xjsx": {
+		"prefix": "xjsx",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<html lang=\"en\">",
+			"\t<head>",
+			"\t\t<meta charset=\"utf-8\" />",
+			"\t\t<meta name=\"viewport\" content=\"width=device-width\" />",
+			"\t\t<title>${2:Document}</title>",
+			"\t\t<template id='app'>",
+			"\t\t\tHello App. $1",
+			"\t\t</template>",
+			"\t</head>",
+			"\t<body>",
+			"\t\t<?if: !window.XJSX?>",
+			"\t\t\tOops! XJSX was not found",
+			"\t\t<?else?>",
+			"\t\t\t<?use-template: 'app'?>",
+			"\t\t<?end?>",
+			"\t</body>",
+			"</html>"
+		],
+		"description": "Page with full HTML"
+	},
+    "xjsx_foo": {
+		"prefix": "xjsx_foo",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?$1: 'value'?>",
+			"\t$0",
+			"<?end?>"
+		],
+		"description": "XJSX tmp"
+	},
+    "xjsx_ment": {
+		"prefix": "xjsx_ment",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?$1: $0?>",
+		],
+		"description": "XJSX tmp"
+	},
+    
+    "if": {
+		"prefix": "if",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?if: $1?>",
+			"\t$0",
+			"<?else?>",
+			"\t$0",
+			"<?end?>"
+		],
+		"description": "XJSX 'if' keyword"
+	},
+    "for-each": {
+		"prefix": "for-each",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?for-each: $1; val, index?>",
+			"\t$0",
+			"<?end?>"
+		],
+		"description": "XJSX 'for-each' keyword"
+	},
+    "print": {
+		"prefix": "print",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?print: $1?>"
+		],
+		"description": "XJSX 'print' keyword"
+	},
+    "console-log": {
+		"prefix": "console-log",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?console-log: $1?>"
+		],
+		"description": "XJSX 'console-log' keyword"
+	},
+    "eval": {
+		"prefix": "eval",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?eval: $1?>"
+		],
+		"description": "XJSX 'eval' keyword"
+	}, 
+    "html-element": {
+		"prefix": "html-element",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<?html-element: '$1', {id:'my_elm'}?>"
+			"\t$0Hello world$0",
+			"<?end?>"
+		],
+		"description": "XJSX 'html element' keyword"
+	}
+}

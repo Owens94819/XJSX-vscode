@@ -10,6 +10,17 @@
     "Programming Languages"
   ],
   "contributes": {
+    "snippets": [
+			{
+				"scope": "xjsx",
+				"path": "./languages/xjsx.code-snippets"
+			}
+		],
+    "breakpoints": [
+			{
+				"language": "xjsx"
+			}
+		],
     "languages": [{
       "id": "xjsx",
       "aliases": ["xjsx", "xjsx"],
@@ -25,14 +36,10 @@
         "text.html": "html",
         "text.html.markdown": "markdown",
         "source.css": "css",
-        "source.css.less": "less",
-        "source.css.scss": "scss",
-        "source.sass": "sass",
-        "source.stylus": "stylus",
+        "source.json": "json",
         "source.js": "javascript",
         "source.ts": "typescript",
-        "source.json": "json",
-        "source.tsx": "javascript"
+        "source.tsx": "typescriptreact"
       },
       "unbalancedBracketScopes": [
         "keyword.operator.relational",
