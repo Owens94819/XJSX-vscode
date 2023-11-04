@@ -112,7 +112,9 @@
 			]
 		},
 		"processingInstructions(<?)": {
-					"begin": "<\\?(?!.*[^\\?]>)([a-zA-Z0-9_\\$][^:]+:|[a-zA-Z0-9_\\$]+)",
+			"patterns": [
+				{
+					"begin": "<\\?(?!.*[^\\?]>)([a-zA-Z0-9_\\$][^:]+:)",
 					"end": "\\?>",
 					"beginCaptures": {
 						"0": {
@@ -124,33 +126,49 @@
 							"name": "punctuation.section.embedded.end.xjsx"
 						}
 					},
-					"name":"entity.other.attribute-name.xjsx",
-					"patterns":[
+					"name": "entity.other.attribute-name.xjsx",
+					"patterns": [
 						{
 							"include": "source.js"
-						}]
+						}
+					]
+				},
+				{
+					"begin": "<\\?(?!.*[^\\?]>)",
+					"end": "\\?>",
+					"name": "punctuation.section.embedded.block.xjsx"
+				}
+			]
 		},
 		"processingInstructions(<!--?)": {
-			"begin": "<!--\\?(?!.*[^\\?]+--!?>)([a-zA-Z0-9_\\$][^:]+:|[a-zA-Z0-9_\\$]+)",
-			"end": "\\?--!?>",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.begin.xjsx"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.end.xjsx"
-				}
-			},
-			"name":"entity.other.attribute-name.xjsx",
-			"patterns":[
+			"patterns": [
 				{
-					"include": "source.js"
-				}]
+					"begin": "<!--\\?(?!.*[^\\?]+--!?>)([a-zA-Z0-9_\\$][^:]+:)",
+					"end": "\\?--!?>",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.begin.xjsx"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.end.xjsx"
+						}
+					},
+					"name": "entity.other.attribute-name.xjsx",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				},
+				{
+					"begin": "<!--\\?(?!.*[^\\?]+--!?>)",
+					"end": "\\?--!?>",
+					"name": "punctuation.section.embedded.block.xjsx"
+				}
+			]
 		},
-
-
 		"comments(<!--)": {
 			"begin": "<!--",
 			"end": "--!?>",
@@ -177,7 +195,6 @@
 			},
 			"name": "comment.block.xjsx"
 		},
-
 		"attributes": {
 			"patterns": [
 				{
