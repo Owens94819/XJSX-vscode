@@ -20,7 +20,7 @@
 				}
 			]
 		},
-		"L:(meta.script.xjsx) (meta.lang.js | meta.lang.javascript | meta.lang.partytown | meta.lang.node) - (meta source)": {
+		"L:(meta.script.xjsx) (meta.lang.js | meta.lang.javascript) - (meta source)": {
 			"patterns": [
 				{
 					"begin": "(?<=>)(?!</)",
@@ -84,51 +84,22 @@
 	"patterns": [
 		{
 			"include": "#scope"
-		},
-		{
-			"include": "#frontmatter"
 		}
 	],
 	"repository": {
-		"frontmatter": {
-			"begin": "\\A(-{3})\\s*$",
-			"end": "(^|\\G)(-{3})|\\.{3}\\s*$",
-			"beginCaptures": {
-				"1": {
-					"name": "comment"
-				}
-			},
-			"endCaptures": {
-				"2": {
-					"name": "comment"
-				}
-			},
-			"contentName": "source.ts",
-			"patterns": [
-				{
-					"include": "source.ts"
-				}
-			]
-		},
 		"scope": {
 			"patterns": [
 				{
-					"include": "#comments(4)"
+					"include": "#processingInstructions(<?)"
 				},
 				{
-					"include": "#comments(3)"
+					"include": "#processingInstructions(<!--?)"
 				},
 				{
-					"include": "#interpolation(2)"
+					"include": "#comments(<!--)"
 				},
 				{
-					"include": "#comments(1)"
-				}, 
-				{
-					"include": "#comments(2)"
-				}, 
-				{
-					"include": "#interpolation(1)"
+					"include": "#comments(<?)"
 				},
 				{
 					"include": "#tags"
@@ -140,95 +111,9 @@
 				}
 			]
 		},
-		"comments(1)": {
-			"begin": "<!--[^\\?-]|<!--",
-			"end": "-->",
-			"captures": {
-				"0": {
-					"name": "punctuation.definition.comment.xjsx"
-				}
-			},
-			"name": "comment.block.xjsx",
-			"patterns": [
-				{
-					"match": "\\G-?>|<!--(?!>)|<!-(?=-->)|--!>",
-					"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-				}
-			]
-		},
-		"comments(2)": {
-			"begin": "<\\?(\\?)",
-			"end": "\\?>",
-			"captures": {
-				"0": {
-					"name": "punctuation.definition.comment.xjsx"
-				}
-			},
-			"name": "comment.block.xjsx",
-			"patterns": [
-				{
-					"match": ">[^>]+\\?",
-					"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-				}
-			]
-		},
-		"comments(3)": {
-			"begin-": "<\\!--\\?[a-zA-Z0-9_\\$][^\\?\\-\\->]+--!?>",
-			"begin": "<\\!--\\?[a-zA-Z0-9_\\$][^\\?]+--!?>",
-			"end": "--!?>",
-			"beginCaptures": {
-				"0": {
-					"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-				}
-			},
-			"name": "text.xjsx"
-		},
-		"comments(4)": {
-			"begin": "<\\?[a-zA-Z0-9_\\$]([^\\?>]+)>",
-			"end": "([^\\?>]+)\\?>",
-			"beginCaptures": {
-				"0": {
-					"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-				}
-			},
-			"name": "text.xjsx"
-		},
-		"interpolation(1)": {
-			"patterns": [
-				{
-					"begin": "<\\?[a-zA-Z0-9_\\$]([^:]+:|[^\\?]+)",
+		"processingInstructions(<?)": {
+					"begin": "<\\?(?!.*[^\\?]>)([a-zA-Z0-9_\\$][^:]+:|[a-zA-Z0-9_\\$]+)",
 					"end": "\\?>",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.section.embedded.begin.xjsx",
-							"/***/name": "entity.other.attribute-name.xjsx"
-						}
-					},
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.section.embedded.end.xjsx",
-							"/***/name": "support.class.component.xjsx"
-						}
-					},
-					"contentName": "meta.embedded.expression.xjsx source.tsx",
-					"patterns": [
-					
-						{
-							"match": ">[^>]+\\?",
-							"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-						},
-						{
-							"include": "source.tsx"
-						}
-					]
-				}
-			]
-		},
-		"interpolation(2)": {
-			"patterns": [
-				{
-					"begin": "<!--\\?[a-zA-Z0-9_\\$]([^:]+:|[^\\?]+)",
-					"end": "(\\?)?-->",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.section.embedded.begin.xjsx"
@@ -239,19 +124,60 @@
 							"name": "punctuation.section.embedded.end.xjsx"
 						}
 					},
-					"contentName": "meta.embedded.expression.xjsx source.tsx",
-					"patterns": [
+					"name":"entity.other.attribute-name.xjsx",
+					"patterns":[
 						{
-							"match": "\\G-?>|<!--(?!>)|<!-(?=-->)|--!?>",
-							"name": "invalid.illegal.characters-not-allowed-here.xjsx"
-						},
-						{
-							"include": "source.tsx"
-						}
-					]
+							"include": "source.js"
+						}]
+		},
+		"processingInstructions(<!--?)": {
+			"begin": "<!--\\?(?!.*[^\\?]+--!?>)([a-zA-Z0-9_\\$][^:]+:|[a-zA-Z0-9_\\$]+)",
+			"end": "\\?--!?>",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.begin.xjsx"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.end.xjsx"
+				}
+			},
+			"name":"entity.other.attribute-name.xjsx",
+			"patterns":[
+				{
+					"include": "source.js"
+				}]
+		},
+
+
+		"comments(<!--)": {
+			"begin": "<!--",
+			"end": "--!?>",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.xjsx"
+				}
+			},
+			"name": "comment.block.xjsx",
+			"patterns": [
+				{
+					"match": "\\G-?>|<!--(?!>)|<!-(?=-->)|--!?>",
+					"name": "invalid.illegal.characters-not-allowed-here.xjsx"
 				}
 			]
 		},
+		"comments(<?)": {
+			"begin": "<\\?",
+			"end": ">",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.xjsx"
+				}
+			},
+			"name": "comment.block.xjsx"
+		},
+
 		"attributes": {
 			"patterns": [
 				{
@@ -472,16 +398,6 @@
 						}
 					},
 					"name": "string.quoted.xjsx"
-				},
-				{
-					"begin": "(`)",
-					"end": "\\1",
-					"name": "string.template.xjsx",
-					"patterns": [
-						{
-							"include": "source.tsx#template-substitution-element"
-						}
-					]
 				}
 			]
 		},

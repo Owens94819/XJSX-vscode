@@ -1,14 +1,33 @@
 {
-  "name": "my-xjsx",
-  "displayName": "my-xjsx",
-  "description": "",
+  "name": "xjsx-vscode",
+  "displayName": "XJSX",
+  "description": "Language support for XJSX",
   "version": "0.0.1",
+	"author": "Owens Akpede",
+	"license": "MIT",
+	"publisher": "owens94819",
+  "icon": "assets/icon.png",
+	"qna": false,
   "engines": {
     "vscode": "^1.54.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+		"Formatters",
+		"Linters",
+    "Framework",
+    "Html",
+    "JavaScript"
   ],
+  "keywords": [
+		"xjsx",
+		"html",
+		"javascript"
+	],
+  "galleryBanner": {
+		"color": "#17191E",
+		"theme": "dark"
+	},
   "contributes": {
     "snippets": [
 			{
@@ -23,8 +42,8 @@
 		],
     "languages": [{
       "id": "xjsx",
-      "aliases": ["xjsx", "xjsx"],
-      "extensions": [".xjsx"],
+      "aliases": ["xjsx"],
+      "extensions": [".xjsx",".xjsx.html"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [
@@ -34,12 +53,9 @@
       "path": "./syntaxes/xjsx.tmLanguage.json",
       "embeddedLanguages": {
         "text.html": "html",
-        "text.html.markdown": "markdown",
         "source.css": "css",
         "source.json": "json",
-        "source.js": "javascript",
-        "source.ts": "typescript",
-        "source.tsx": "typescriptreact"
+        "source.js": "javascript"
       },
       "unbalancedBracketScopes": [
         "keyword.operator.relational",
@@ -48,18 +64,6 @@
         "meta.brace.angle",
         "punctuation.definition.tag"
       ]
-    },
-    {
-				"scopeName": "text.html.markdown.xjsx",
-				"path": "./syntaxes/markdown.xjsx.tmLanguage.json",
-				"injectTo": [
-					"text.html.markdown",
-					"source.xjsx"
-				],
-				"embeddedLanguages": {
-					"meta.embedded.block.xjsx": "xjsx",
-					"meta.embedded.block.xjsx.frontmatter": "javascript"
-				}
-			}]
+    }]
   }
 }
