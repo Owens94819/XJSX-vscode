@@ -102,19 +102,17 @@
 					"include": "#comments(<?)"
 				},
 				{
-					"include": "#tags"
+					"include": "text.html.basic#tags-valid"
 				},
 				{
-					"begin": "(?<=>)",
-					"end": "(?=<)",
-					"name": "text.xjsx"
+					"include": "text.html.basic#tags-invalid"
 				}
 			]
 		},
 		"processingInstructions(<?)": {
 			"patterns": [
 				{
-					"begin": "<\\?(?!.*[^\\?]>)([a-zA-Z0-9_\\$][^:]+:)",
+					"begin": "<\\?(?![^\\?]+>)[a-zA-Z0-9_\\$][^:]+(?<!.*\\?>.):",
 					"end": "\\?>",
 					"beginCaptures": {
 						"0": {
@@ -129,21 +127,23 @@
 					"name": "entity.other.attribute-name.xjsx",
 					"patterns": [
 						{
-							"include": "source.js"
+							"include": "source.js#expression"
+						},
+						{
+							"include": "source.js#punctuation-comma"
 						}
 					]
-				},
-				{
-					"begin": "<\\?(?!.*[^\\?]>)",
+				},{
+					"begin": "<\\?(?![^\\?]+>)",
 					"end": "\\?>",
-					"name": "punctuation.section.embedded.block.xjsx"
+					"name": "punctuation.section.embedded.xjsx"
 				}
 			]
 		},
 		"processingInstructions(<!--?)": {
 			"patterns": [
 				{
-					"begin": "<!--\\?(?!.*[^\\?]+--!?>)([a-zA-Z0-9_\\$][^:]+:)",
+					"begin": "<!--\\?(?![^\\?]+--!?>)[a-zA-Z0-9_\\$][^:]+(?<!.*\\?--!?>.):",
 					"end": "\\?--!?>",
 					"beginCaptures": {
 						"0": {
@@ -158,14 +158,13 @@
 					"name": "entity.other.attribute-name.xjsx",
 					"patterns": [
 						{
-							"include": "source.js"
+							"include": "source.js#expression"
 						}
 					]
-				},
-				{
-					"begin": "<!--\\?(?!.*[^\\?]+--!?>)",
+				},{
+					"begin": "<!--\\?(?![^\\?]+--!?>)",
 					"end": "\\?--!?>",
-					"name": "punctuation.section.embedded.block.xjsx"
+					"name": "punctuation.section.embedded.xjsx"
 				}
 			]
 		},

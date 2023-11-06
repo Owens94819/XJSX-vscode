@@ -1,0 +1,117 @@
+"processingInstructions(<?)": {
+    "patterns": [
+        {
+            "begin": "<\\?(?![^\\?]+>)[a-zA-Z0-9_\\$][^:]+:",
+            "end": "\\?>",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.begin.xjsx"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.end.xjsx"
+                }
+            },
+            "name": "entity.other.attribute-name.xjsx",
+            "patterns": [
+                {
+                    "include": "source.js#expression"
+                },
+                {
+                    "include": "source.js#punctuation-comma"
+                }
+            ]
+        }
+    ]
+},
+"processingInstructions(<!--?)": {
+    "patterns": [
+        {
+            "begin": "<!--\\?(?![^\\?]+--!?>)[a-zA-Z0-9_\\$][^:]+:",
+            "end": "\\?--!?>",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.begin.xjsx"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.end.xjsx"
+                }
+            },
+            "name": "entity.other.attribute-name.xjsx",
+            "patterns": [
+                {
+                    "include": "source.js#expression"
+                }
+            ]
+        }
+    ]
+},
+
+"/**/processingInstructions(>)": {
+    "patterns": [
+        {
+            "begin": "<(?:!(--)|)\\?(?!.*[^\\?]\\1(?:(?<=--)!?|)>)",
+            "end": "(?=(\\?\\1(?:(?<=\\?--)!?>|>)))\\2",
+            "name": "punctuation.section.embedded.xjsx"
+        }
+    ]
+},
+"/**/processingInstructions(<?)": {
+    "patterns": [
+        {
+            "begin": "<(?:!(--)|)\\?(?!.*[^\\?](?:\\1(?<=--)!?|(?=.))>)[a-zA-Z0-9_\\$][^:]+:",
+            "end": "(?=(\\?\\1(?:(?<=\\?--)!?>|>)))\\2",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.begin.xjsx"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.end.xjsx"
+                }
+            },
+            "name": "entity.other.attribute-name.xjsx",
+            "patterns": [
+                {
+                    "include": "source.js#expression"
+                },
+                {
+                    "include": "source.js#punctuation-comma"
+                }
+            ]
+        },
+        {
+            "begin": "sss<(?:!(--)\\?|\\?)(?!.*[^\\?]\\1(?:(?<=--)!?|)>)[a-zA-Z0-9_\\$]",
+            "end": "sss(?=(\\?\\1(?:(?<=\\?--)!?>|>)))\\2",
+            "name": "punctuation.section.embedded.xjsx"
+        }
+    ]
+},
+"/**/processingInstructions(<!--?)": {
+    "patterns": [
+        {
+            "begin": "<!--\\?[a-zA-Z0-9_\\$](?!.*[^\\?]--!?>)[^:]+:",
+            "end": "\\?--!?>",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.begin.xjsx"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.end.xjsx"
+                }
+            },
+            "name": "entity.other.attribute-name.xjsx",
+            "patterns": [
+                {
+                    "include": "source.js#expression"
+                }
+            ]
+        }
+    ]
+},
