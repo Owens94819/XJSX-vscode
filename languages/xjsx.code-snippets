@@ -107,4 +107,24 @@
 		],
 		"description": "XJSX 'html element' keyword"
 	}
+
+	,
+	"<":{
+		"prefix": "<",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"<$1>$0</$1>"
+		],
+		"description": "XJSX 'HTML' keyword"
+	},
+	"</":{
+		"prefix": "</",
+		"isFileTemplate": true,
+		"scope": "xjsx",
+		"body": [
+			"</$1>"
+		],
+		"description": "XJSX 'HTML' keyword"
+	}
 }

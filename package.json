@@ -1,12 +1,12 @@
 {
-  "name": "xjsx-vscode",
+  "name": "XJSX-vscode",
   "displayName": "XJSX",
   "description": "Language support for XJSX",
   "version": "0.0.1",
 	"author": "Owens Akpede",
 	"license": "MIT",
 	"publisher": "owens94819",
-  "icon": "./assets/icon.png",
+  "icon": "assets/icon.png",
 	"qna": false,
   "engines": {
     "vscode": "^1.54.0"

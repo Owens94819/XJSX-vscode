@@ -4,67 +4,6 @@
 	"fileTypes": [
 		"xjsx"
 	],
-	"injections": {
-		"L:(meta.pr.xjsx) (meta.lang.pr) - (meta source)": {
-			"patterns": [
-				{
-					"begin": "[^:]+:",
-					"end": "\\G",
-					"name": "meta.embedded.block.xjsx",
-					"contentName": "source.json",
-					"patterns": [
-						{
-							"xinclude": "source.json"
-						}
-					]
-				}
-			]
-		},
-		"L:(meta.script.xjsx) (meta.lang.json) - (meta source)": {
-			"patterns": [
-				{
-					"begin": "[^]+:",
-					"end": "\\G",
-					"name": "entity.other.attribute-name.xjsx",
-					"xcontentName": "source.js",
-					"patterns": [
-						{
-							"xinclude": "source.json"
-						}
-					]
-				}
-			]
-		},
-		"L:(meta.script.xjsx) (meta.lang.js | meta.lang.javascript) - (meta source)": {
-			"patterns": [
-				{
-					"begin": "(?<=>)(?!</)",
-					"end": "(?=</)",
-					"name": "meta.embedded.block.xjsx",
-					"contentName": "source.js",
-					"patterns": [
-						{
-							"include": "source.js"
-						}
-					]
-				}
-			]
-		},
-		"L:meta.script.xjsx - meta.lang - (meta source)": {
-			"patterns": [
-				{
-					"begin": "[^:?]+:",
-					"end": "\\?>",
-					"name": "entity.other.attribute-name.xjsx",
-					"patterns": [
-						{
-							"include": "source.js#expression"
-						}
-					]
-				}
-			]
-		}
-	},
 	"patterns": [
 		{
 			"include": "#scope"
