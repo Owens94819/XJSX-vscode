@@ -74,7 +74,11 @@
 		"scope": {
 			"patterns": [
 				{
-					"include": "#processingInstructions()"
+					"xinclude": "#processingInstructions(test)",
+					"include": "#processingInstructions(<?)"
+				},
+				{
+					"include": "#processingInstructions(<!--?)"
 				},
 				{
 					"include": "#comments(<!--)"
@@ -90,86 +94,95 @@
 				}
 			]
 		},
-		"processingInstructions()": {
+		"processingInstructions(test)": {
 			"patterns": [
 				{
-					"patterns": [
-						{
-							"begin": "<\\?[^:?]+:",
-							"end": "\\?>",
-							"beginCaptures": {
-								"0": {
-									"name": "punctuation.section.embedded.begin.xjsx"
-								}
-							},
-							"endCaptures": {
-								"0": {
-									"name": "punctuation.section.embedded.end.xjsx"
-								}
-							},
-							"patterns":[{
-								"begin":"(?=>)",
-								"end":".(?=\\?>)",
-								"name":"invalid.illegal.characters-not-allowed-here.xjsx"
-							},{
-								"include":"#expression"
-							}]
-						},
-						{
-							"begin": "<\\?",
-							"end": "\\?>",
-							"name": "punctuation.section.embedded.block.xjsx",
-							"patterns":[{
-								"begin":"(?=>)",
-								"end":".(?=\\?>)",
-								"name":"invalid.illegal.characters-not-allowed-here.xjsx"
-							}]
+					"begin": "<\\?(?=.*>(?=.\\?>))[a-zA-Z0-9_$][^:?]+:",
+					"end": "\\?>",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.begin.xjsx"
 						}
-					]
-				},
-				{
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.end.xjsx"
+						}
+					},
 					"patterns": [
 						{
-							"begin": "<!--\\?[^:?]+:",
-							"end": "\\?--!?>",
-							"beginCaptures": {
-								"0": {
-									"name": "punctuation.section.embedded.begin.xjsx"
-								}
-							},
-							"endCaptures": {
-								"0": {
-									"name": "punctuation.section.embedded.end.xjsx"
-								}
-							},
-							"patterns":[{
-								"begin":"(?=--!?>)",
-								"end":".(?=\\?--!?>)",
-								"name":"invalid.illegal.characters-not-allowed-here.xjsx"
-							},{
-								"include":"#expression"
-							}]
-						},
-						{
-							"begin": "<!--\\?",
-							"end": "\\?--!?>",
-							"name": "punctuation.section.embedded.block.xjsx",
-							"patterns":[{
-								"begin":"(?=--!?>)",
-								"end":".(?=\\?--!?>)",
-								"name":"invalid.illegal.characters-not-allowed-here.xjsx"
-							}]
+							"include":"#processingInstructions(block)"
 						}
 					]
 				}
 			]
 		},
-		"expression":{
-			"patterns":[
+		"processingInstructions(block)": {
+			"patterns": [
 				{
-				"include":"source.js#expression"
-			}
-		]
+					"match": "\\G(?<=:).ddd",
+					"zname": "meta.script.xjsx"
+				}
+			]
+		},
+		"processingInstructions(<?)": {
+			"patterns": [
+				{
+					"begin": "<\\?(?![^\\?]+>)[a-zA-Z0-9_\\$][^:]+(?<!.*\\?>.):",
+					"end": "\\?>",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.begin.xjsx"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.end.xjsx"
+						}
+					},
+					"name": "entity.other.attribute-name.xjsx",
+					"patterns": [
+						{
+							"include": "source.js#expression"
+						},
+						{
+							"include": "source.js#punctuation-comma"
+						}
+					]
+				},{
+					"begin": "<\\?[^\\W]+(?![^?]?>)",
+					"end": "\\?>",
+					"name": "punctuation.section.embedded.xjsx"
+				}
+			]
+		},
+		"processingInstructions(<!--?)": {
+			"patterns": [
+				{
+					"begin": "<!--\\?(?![^\\?]+--!?>)[a-zA-Z0-9_\\$][^:]+(?<!.*\\?--!?>.):",
+					"end": "\\?--!?>",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.begin.xjsx"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.embedded.end.xjsx"
+						}
+					},
+					"name": "entity.other.attribute-name.xjsx",
+					"patterns": [
+						{
+							"include": "source.js#expression"
+						}
+					]
+				},{
+					"begin": "<!--\\?[a-zA-Z0-9_\\$](?![^\\?]+--!?>)(?<!.*\\?--!?>.)",
+					"end": "\\?--!?>",
+					"name": "punctuation.section.embedded.xjsx"
+				}
+			]
 		},
 		"comments(<!--)": {
 			"begin": "<!--",
