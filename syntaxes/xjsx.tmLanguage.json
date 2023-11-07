@@ -34,7 +34,7 @@
 				{
 					"patterns": [
 						{
-							"begin": "<\\?[^:?]+:",
+							"begin": "<\\?(?=[a-zA-Z0-9_$])[^:?]+:",
 							"end": "\\?>",
 							"beginCaptures": {
 								"0": {
@@ -55,7 +55,7 @@
 							}]
 						},
 						{
-							"begin": "<\\?",
+							"begin": "<\\?(?=[a-zA-Z0-9_$])",
 							"end": "\\?>",
 							"name": "punctuation.section.embedded.block.xjsx",
 							"patterns":[{
@@ -69,7 +69,7 @@
 				{
 					"patterns": [
 						{
-							"begin": "<!--\\?[^:?]+:",
+							"begin": "<!--\\?(?=[a-zA-Z0-9_$])[^:?]+:",
 							"end": "\\?--!?>",
 							"beginCaptures": {
 								"0": {
@@ -90,7 +90,7 @@
 							}]
 						},
 						{
-							"begin": "<!--\\?",
+							"begin": "<!--\\?(?=[a-zA-Z0-9_$])",
 							"end": "\\?--!?>",
 							"name": "punctuation.section.embedded.block.xjsx",
 							"patterns":[{
