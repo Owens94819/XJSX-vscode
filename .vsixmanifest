@@ -30,7 +30,7 @@
 				
 			</Properties>
 			<License>extension/LICENSE.txt</License>
-			<Icon>assets/icon.png</Icon>
+			<Icon>extension/assets/icon.png</Icon>
 		</Metadata>
 		<Installation>
 			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
@@ -41,6 +41,6 @@
 			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
 <Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
 <Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
-<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="assets/icon.png" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/icon.png" Addressable="true" />
 		</Assets>
 	</PackageManifest>
