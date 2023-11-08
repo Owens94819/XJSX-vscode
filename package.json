@@ -6,7 +6,15 @@
 	"author": "Owens Akpede",
 	"license": "MIT",
 	"publisher": "owens94819",
-  "icon": "assets/icon.png",
+  "icon": "https://owens94819.github.io/XJSX-vscode/assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owens94819/XJSX-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/owens94819/XJSX-vscode/issues"
+  },
+  "homepage": "https://github.com/owens94819/XJSX-vscode#readme",
 	"qna": false,
   "engines": {
     "vscode": "^1.54.0"
