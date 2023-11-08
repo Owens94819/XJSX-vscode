@@ -7,6 +7,11 @@
 	"license": "MIT",
 	"publisher": "owens94819",
   "icon": "assets/icon.png",
+  "files": [
+		"languages/",
+		"syntaxes/",
+		"assets/"
+	],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/owens94819/XJSX-vscode.git"
@@ -49,7 +54,11 @@
       "id": "xjsx",
       "aliases": ["xjsx"],
       "extensions": [".xjsx",".xjsx.html"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+				"icon": {
+					"light": "./assets/icon (copy).svg",
+					"dark": "./assets/icon (copy).svg"
+				}
     }],
     "grammars": [
     {
