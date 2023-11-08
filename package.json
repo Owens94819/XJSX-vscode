@@ -22,9 +22,7 @@
   "categories": [
     "Programming Languages",
 		"Formatters",
-		"Linters",
-    "Html",
-    "JavaScript"
+		"Linters"
   ],
   "keywords": [
 		"xjsx",
