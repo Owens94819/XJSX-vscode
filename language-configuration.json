@@ -1,16 +1,39 @@
 {
-    "brackets": [
-        ["<?", "?>"],
-        ["<!--?", "?--!>"],
-        ["<!--?", "?-->"]
-    ],
-    "autoClosingPairs": [
-      { "open": "<?", "close": "?>" }
-    ],
-    "autoCloseBefore": ">",
-    "surroundingPairs": [
-      { "open": "<?", "close": "?>" },
-      { "open": "<", "close": ">" }
+  "comments": {
+    "blockComment": [
+      "<!--/",
+      "/-->"
     ]
-  }
-  
+  },
+  "brackets": [
+    [
+      "<?",
+      "?>"
+    ],
+    [
+      "<!--?",
+      "?--!>"
+    ],
+    [
+      "<!--?",
+      "?-->"
+    ]
+  ],
+  "autoClosingPairs": [
+    {
+      "open": "<?",
+      "close": "?>"
+    }
+  ],
+  "autoCloseBefore": ">",
+  "surroundingPairs": [
+    {
+      "open": "<?",
+      "close": "?>"
+    },
+    {
+      "open": "<",
+      "close": ">"
+    }
+  ]
+}

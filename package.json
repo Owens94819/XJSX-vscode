@@ -6,7 +6,7 @@
 	"author": "Owens Akpede",
 	"license": "MIT",
 	"publisher": "owens94819",
-  "icon": "https://owens94819.github.io/XJSX-vscode/assets/icon.png",
+  "icon": "assets/icon.png",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/owens94819/XJSX-vscode.git"
