@@ -2,7 +2,7 @@
   "name": "XJSX-vscode",
   "displayName": "XJSX",
   "description": "Language support for XJSX",
-  "version": "0.0.2",
+  "version": "0.0.3",
 	"author": "Owens Akpede",
 	"license": "MIT",
 	"publisher": "owens94819",
@@ -56,8 +56,8 @@
       "extensions": [".xjsx",".xjsx.html"],
       "configuration": "./language-configuration.json",
 				"icon": {
-					"light": "./assets/icon (copy).svg",
-					"dark": "./assets/icon (copy).svg"
+					"light": "./assets/icon.svg",
+					"dark": "./assets/icon.svg"
 				}
     }],
     "grammars": [

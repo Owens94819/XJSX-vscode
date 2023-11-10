@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   fill="none"
-   viewBox="0 0 24 24"
+   viewBox="0 0 256 256"
    version="1.1"
-   id="svg3"
+   id="svg2"
    sodipodi:docname="icon.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
   <sodipodi:namedview
-     id="namedview3"
+     id="namedview2"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -20,123 +23,77 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
+     inkscape:lockguides="true"
+     showgrid="true"
      showguides="true"
-     inkscape:zoom="22.333333"
-     inkscape:cx="11.731343"
-     inkscape:cy="12.895523"
+     inkscape:zoom="2.09375"
+     inkscape:cx="128"
+     inkscape:cy="127.52239"
      inkscape:window-width="1366"
      inkscape:window-height="745"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="svg2">
+    <inkscape:grid
+       id="grid2"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
     <sodipodi:guide
-       position="4.7462687,18.313433"
+       position="83.58209,139.9403"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="171.9403,128.47761"
        orientation="1,0"
        id="guide3"
-       inkscape:locked="false" />
+       inkscape:locked="true" />
     <sodipodi:guide
-       position="19.835821,13.835821"
+       position="127.04478,124.65672"
        orientation="1,0"
        id="guide4"
-       inkscape:locked="false" />
+       inkscape:locked="true" />
     <sodipodi:guide
-       position="21.268657,13.567164"
+       position="182.92537,129.43284"
        orientation="1,0"
-       id="guide38"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="2.6865672,12.402985"
-       orientation="1,0"
-       id="guide39"
-       inkscape:locked="false" />
+       id="guide5"
+       inkscape:locked="true" />
   </sodipodi:namedview>
-  <defs
-     id="defs3">
-    <linearGradient
-       id="a"
-       x1="8.19"
-       x2="16.91"
-       y1="23"
-       y2="18.89"
-       gradientUnits="userSpaceOnUse">
-      <stop
-         stop-color="#D83333"
-         id="stop2"
-         offset="0" />
-      <stop
-         offset="1"
-         stop-color="#FF419F"
-         id="stop3"
-         style="stop-color:#f041ff;stop-opacity:1;" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#a"
-       id="linearGradient6"
-       x1="-6.0426073"
-       y1="4.5132055"
-       x2="10.977247"
-       y2="21.006691"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       gradientTransform="translate(8.3696951,0.23834517)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#a"
-       id="linearGradient38"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(9.5052819,-0.1430071)"
-       x1="-6.0426073"
-       y1="4.5132055"
-       x2="10.977247"
-       y2="21.006691"
-       spreadMethod="pad" />
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter38"
-       x="-0.060583647"
-       y="-0.061250776"
-       width="1.1211673"
-       height="1.1225016">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.41804879"
-         id="feGaussianBlur38" />
-    </filter>
-  </defs>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Layer 1">
-    <g
-       id="g38"
-       transform="translate(-0.76151387,-0.16468458)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.9627px;font-family:'Javanese Text';-inkscape-font-specification:'Javanese Text, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient38);fill-opacity:1;stroke:#c52626;stroke-width:0.076;stroke-dasharray:none;stroke-opacity:1"
-         x="3.6875143"
-         y="21.069714"
-         id="text38"
-         transform="scale(1.0646084,0.93931252)"><tspan
-           sodipodi:role="line"
-           id="tspan38"
-           x="3.6875143"
-           y="21.069714"
-           style="fill:url(#linearGradient38);fill-opacity:1;stroke:#c52626;stroke-width:0.076;stroke-dasharray:none;stroke-opacity:1">X</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.9627px;font-family:'Javanese Text';-inkscape-font-specification:'Javanese Text, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:0.408551;fill:url(#linearGradient6);fill-opacity:1;stroke:#c52626;stroke-width:0.076;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter38)"
-         x="2.5519276"
-         y="21.451065"
-         id="text3"
-         transform="scale(1.0646084,0.93931252)"><tspan
-           sodipodi:role="line"
-           id="tspan4"
-           x="2.5519276"
-           y="21.451065"
-           style="fill:url(#linearGradient6);fill-opacity:1;stroke:#c52626;stroke-width:0.076;stroke-dasharray:none;stroke-opacity:1">X</tspan></text>
-    </g>
-  </g>
+  <polyline
+     fill="none"
+     stroke="#D4843E"
+     stroke-width="24"
+     stroke-miterlimit="10"
+     points="74.5,192.1 21,130 74.5,67.9"
+     id="polyline1" />
+  <polyline
+     fill="none"
+     stroke="#D4843E"
+     stroke-width="24"
+     stroke-miterlimit="10"
+     points="181.5,70.1 235,132.1 181.5,194.2"
+     id="polyline2" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:'Sitka Heading';-inkscape-font-specification:'Sitka Heading, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:0.526802;fill:#d4843e;fill-opacity:1;stroke:#d4843e;stroke-width:0.076;stroke-opacity:1"
+     x="75.391998"
+     y="188.58667"
+     id="text2"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="75.391998"
+       y="188.58667">?</tspan></text>
 </svg>
