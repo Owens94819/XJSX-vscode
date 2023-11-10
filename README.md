@@ -1,6 +1,6 @@
 # XJSX support for Visual Studio Code
 
-> 🧑‍🚀 Not sure what XJSX is? See our documentation at [gitub/XJSX](https://github.com/owens94819/XJSX#readme)!
+> < ? 🧑‍🚀? > Not sure what XJSX is? See our documentation at [gitub/XJSX](https://github.com/owens94819/XJSX#readme)!
 
 Provides language support for `.xjsx` and `.html.xjsx` files.
 
